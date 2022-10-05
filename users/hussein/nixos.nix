@@ -57,6 +57,7 @@ in
     home = "/home/hussein";
     extraGroups = [ "docker" "wheel" ];
     shell = pkgs.zsh;
+    hashedPassword = "$6$chkGhjvyDWNjInzF$PlMAkQMrvYgEtPrzGfZMMcDiS1gG06JDLdmBQaq/WPMgYw3Fp3EgZQKcRlbItwBzTRsMn5uQNqM9Np72Af5QS0";
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDmbQk7DL6HY6/6zqLo1vyq56QcRxkp/QAnLW5fUqfj1LXY49LDwNLVf3Axg0xvj9Z+CUS64J3MDtFvC22sL8Sn2TyVCkjAhpG6Y0NNbIj8ZoUyOi4s+wIH5b81lS382yJKf+1kyuiLgSyiaoOVpZUvXLASSH4XQgQ/tYI4PVWrZwzDrVQ6FQJzdzClJ5H9UOzYdAWzaedET62o/OzeXmqrMzFkYefuzGQ1KhymNmNOZORbWYpxrPpr1rdvs/AaYHJVYkf+2pVMqGoNs0ZAsA/YsWlE0ucFCAXZcVhj4DUGJfKn86a3i8uXZ7PZJ7K2XGwOB0cAcz+ynay1GnVUiywddCtUGmPTiFSGIhL4N6Lwu2Qu6exBYsl1pbFXKZ3NycmCw1/LH5UkAq6qzFV7xaPjODbEsGCN2rN1qOM/8eSWaz2QOXJZjSmY/kgNmGPcjhCQ/bJ0nFiwo4e92Jj5VqPS4JGb7FbCwBKEPxCrus/+r+xomnxmjkU7NscKMSTO5QZYh22wv49mgI26UkZC9oOWEYZmYBH+pA3zIf4SORHg8oeFoBz+8dCndCkB73rh0gi/KCFMuhyH8MiT35QNIvacUmm4GHbOlZ3eWcmQlzK0jEYJEfoq+dAC+0C2PVHnWlYryjTHUcOb+QrGGwxUVcywa0Th0wcxDobFgOmMDscetw== hussein.aitlahcen@gmail.com"
     ];
