@@ -53,7 +53,7 @@
         inherit nixpkgs home-manager inputs;
         # nixpkgs = inputs.nixpkgs-old-kernel;
         system = "aarch64-linux";
-        user = "cor";
+        user = "hussein";
 
         overlays = [
           (final: prev: {
@@ -91,19 +91,19 @@
       nixosConfigurations.vm-aarch64-prl = mkVM "vm-aarch64-prl" rec {
         inherit inputs overlays nixpkgs home-manager;
         system = "aarch64-linux";
-        user = "cor";
+        user = "hussein";
       };
 
       nixosConfigurations.vm-aarch64-utm = mkVM "vm-aarch64-utm" rec {
         inherit inputs overlays nixpkgs home-manager;
         system = "aarch64-linux";
-        user = "cor";
+        user = "hussein";
       };
 
       nixosConfigurations.vm-intel = mkVM "vm-intel" rec {
         inherit inputs nixpkgs home-manager overlays;
         system = "x86_64-linux";
-        user = "cor";
+        user = "hussein";
       };
     };
 }

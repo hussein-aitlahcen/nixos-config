@@ -6,13 +6,13 @@ let
       scriptName = if lib.stringLength name == 0 then modeName else name;
     in
     pkgs.writeShellScriptBin "xr-${scriptName}" ''
-      # xrandr doesn't parse the output correctly when you use $()      
+      # xrandr doesn't parse the output correctly when you use $()
       # therefore we use eval instead
-      MODELINE=$(cvt ${toString w} ${toString h} ${toString r} | tail -n 1 | cut -d " " -f2-) 
-      eval "xrandr --newmode $MODELINE" 
+      MODELINE=$(cvt ${toString w} ${toString h} ${toString r} | tail -n 1 | cut -d " " -f2-)
+      eval "xrandr --newmode $MODELINE"
       xrandr --addmode Virtual-1 ${modeName}
       xrandr -s ${modeName}
-      xrandr --dpi 192 
+      xrandr --dpi 192
       feh-bg-fill
     '';
 in
@@ -52,14 +52,13 @@ in
     (mkXr { name = "4-3"; w = 3840; h = 2880; r = 60; })
   ];
 
-  users.users.cor = {
+  users.users.hussein = {
     isNormalUser = true;
-    home = "/home/cor";
+    home = "/home/hussein";
     extraGroups = [ "docker" "wheel" ];
     shell = pkgs.zsh;
-    hashedPassword = "$6$sb3eB/EbsWnfAqzy$szu0h/hbX9/23n5RKE0dwzV8lmq.1Yj2NzI/jYQxJZIbzmY8dpIYRdhUVZgCMnR0CeqrQfgzs6FtPoGUiCqDR0";
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIYMXAekVupSqJ2gDqJvtehePc+J8J7gZant6C4375H3 cor@pruijs.nl"
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDmbQk7DL6HY6/6zqLo1vyq56QcRxkp/QAnLW5fUqfj1LXY49LDwNLVf3Axg0xvj9Z+CUS64J3MDtFvC22sL8Sn2TyVCkjAhpG6Y0NNbIj8ZoUyOi4s+wIH5b81lS382yJKf+1kyuiLgSyiaoOVpZUvXLASSH4XQgQ/tYI4PVWrZwzDrVQ6FQJzdzClJ5H9UOzYdAWzaedET62o/OzeXmqrMzFkYefuzGQ1KhymNmNOZORbWYpxrPpr1rdvs/AaYHJVYkf+2pVMqGoNs0ZAsA/YsWlE0ucFCAXZcVhj4DUGJfKn86a3i8uXZ7PZJ7K2XGwOB0cAcz+ynay1GnVUiywddCtUGmPTiFSGIhL4N6Lwu2Qu6exBYsl1pbFXKZ3NycmCw1/LH5UkAq6qzFV7xaPjODbEsGCN2rN1qOM/8eSWaz2QOXJZjSmY/kgNmGPcjhCQ/bJ0nFiwo4e92Jj5VqPS4JGb7FbCwBKEPxCrus/+r+xomnxmjkU7NscKMSTO5QZYh22wv49mgI26UkZC9oOWEYZmYBH+pA3zIf4SORHg8oeFoBz+8dCndCkB73rh0gi/KCFMuhyH8MiT35QNIvacUmm4GHbOlZ3eWcmQlzK0jEYJEfoq+dAC+0C2PVHnWlYryjTHUcOb+QrGGwxUVcywa0Th0wcxDobFgOmMDscetw== hussein.aitlahcen@gmail.com"
     ];
   };
 }

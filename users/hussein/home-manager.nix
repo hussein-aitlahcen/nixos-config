@@ -138,36 +138,21 @@ in
   # };
   # };
 
-  programs.tmux = {
-    enable = true;
-    terminal = "xterm-256color";
-    shell = "${pkgs.zsh}/bin/zsh";
-    secureSocket = false;
-    clock24 = true;
-    escapeTime = 0;
-    historyLimit = 1000000;
-    baseIndex = 1;
-    plugins = with pkgs.tmuxPlugins; [ pain-control ];
-    extraConfig = ''
-      set -g mouse on
-    '';
-  };
-
   programs.git = {
     enable = true;
-    userName = "cor";
-    userEmail = "cor@pruijs.dev";
+    userName = "hussein";
+    userEmail = "hussein.aitlahcen@gmail.com";
     lfs.enable = true;
     signing = {
       signByDefault = true;
-      key = "06A6337C2BDD1365883C0668DB347466107E589F";
+      key = "3B7CA836ACA61E646A0BDC80FC5CB669F3A22DE4";
     };
     extraConfig = {
       # branch.autosetuprebase = "always";
       color.ui = true;
       # core.askPass = ""; # needs to be empty to use terminal for ask pass
       # credential.helper = "store"; # want to make this more secure
-      github.user = "cor";
+      github.user = "hussein-aitlahcen";
       # push.default = "tracking";
       # init.defaultBranch = "main";
     };
@@ -186,56 +171,11 @@ in
     };
   };
 
-  programs.helix = {
-    enable = true;
-    package = inputs.helix.packages.${pkgs.system}.default;
-
-    settings = {
-      theme = "catppuccin_macchiato";
-      editor = {
-        line-number = "relative";
-        completion-trigger-len = 0;
-        scroll-lines = 1;
-        scrolloff = 5;
-        cursorline = true;
-        color-modes = true;
-        indent-guides.render = true;
-        file-picker.hidden = false;
-        auto-pairs = false;
-        lsp.display-messages = true;
-        bufferline = "always";
-      };
-    };
-
-    languages = [
-      {
-        name = "rust";
-        config = {
-          checkOnSave.command = "clippy";
-          cargo.allFeatures = true;
-          procMacro.enable = true;
-
-        };
-
-      }
-
-    ];
-  };
-
   programs.chromium = {
     enable = true;
     package = pkgs.chromium;
     extensions = [
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-      "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
-      "fihnjjcciajhdojfnbdddfaoknhalnja" # I don't care about cookies
-      "gcbommkclmclpchllfjekcdonpmejbdp" # Https everywhere
-      "bkdgflcldnnnapblkhphbgpggdiikppg" # DuckDuckGo
-      "ennpfpdlaclocpomkiablnmbppdnlhoh" # Rust Search Extension
-      "mjdepdfccjgcndkmemponafgioodelna" # DF Tube (Distraction Free for YouTube)
-      "dneaehbmnbhcippjikoajpoabadpodje" # Old reddit redirect
-      "ililagkodjpoopfjphagpamfhfbamppa" # Less distracting reddit
-      "blaaajhemilngeeffpbfkdjjoefldkok" # LeechBlock
       "mopnmbcafieddcagagdcbnhejhlodfdd" # Polkadot js
     ];
   };
@@ -303,11 +243,11 @@ in
     };
     theme = "One Half";
   };
-  
+
   xsession.windowManager.awesome = {
     enable = true;
   };
-  
+
   home.file.".config/awesome".source = ../../awesome;
   home.file.".config/ranger/rc.conf".source = ./ranger.conf;
 
